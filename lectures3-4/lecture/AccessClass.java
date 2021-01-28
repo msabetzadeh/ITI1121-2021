@@ -5,6 +5,7 @@ public class AccessClass  {
 
 	public void instanceMethod(){
 		instanceMember++;
+		classMember++;
 	}
 
 	public static void classMethod() {
