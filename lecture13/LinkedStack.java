@@ -1,32 +1,57 @@
 public class LinkedStack<E> implements Stack<E> {
 
-    private static class Elem<T> {
-        private T value;
-        private Elem<T> next;
+    private Elem<E> top;
 
-        private Elem(T value, Elem<T> next) {
+    private static class Elem<F> {
+        private F value;
+        private Elem<F> next;
+
+        private Elem(F value, Elem<F> next){
             this.value = value;
             this.next = next;
         }
     }
 
-    private Elem<E> top;
+    public LinkedStack(){
+        top = null;
+    }
 
-    public boolean isEmpty() {
+
+    public  boolean isEmpty() {
         return top == null;
     }
 
-    public void push(E value) {
-        top = new Elem<E>(value, top);
+    public  E push(E newVal) {
+        
+        top = new Elem<E>(newVal,top);
+        
+        return  newVal;
     }
 
-    public E peek() {
+    public  E pop() {
+        E val = top.value;
+        top = top.next;
+        return val;
+    }
+
+    public  E peek() {
         return top.value;
     }
 
-    public E pop() {
-        E saved = top.value;
-        top = top.next;
-        return saved;
+    public String toString(){
+        String result;
+        result = "[";
+        Elem<E> p = top;
+        while(p != null){
+            result += p.value; // or p.value.toString();
+            p = p.next;
+            if(p!=null) {
+                result += ", ";
+            }
+        }
+        result += "]";
+        return result;
     }
+   
 }
+

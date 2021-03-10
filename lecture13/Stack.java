@@ -1,6 +1,7 @@
 public interface Stack<E> {
-    boolean isEmpty();
-    E peek();
-    E pop();
-    void push( E element);
+    public abstract boolean isEmpty();
+    public abstract E push(E elem);
+    public abstract E pop();
+    public abstract E peek();
 }
+
