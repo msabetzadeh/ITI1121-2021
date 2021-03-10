@@ -3,11 +3,11 @@ public class Grill {
     public void cooking() {
 	try {
 	    burner.on();
-	    addSteack();
+	    addSteak();
 	    addSalt();
 	    addPepper();
-	    while (! done) {
-		checkSteack();
+	    while (!done) {
+		checkSteak();
 	    }
 	} catch ( OutOfGazException e1 ) {
 	    callRetailer();
