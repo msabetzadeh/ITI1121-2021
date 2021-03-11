@@ -14,9 +14,10 @@ public class Test {
 			b();
 		} catch ( NumberFormatException e ) {
 			System.out.println( "a() :: caught exception" );
-		} catch ( RuntimeException e ) {
-			System.out.println( "a() :: caught RuntimeException exception" );
-		} finally {
+		} //catch ( RuntimeException e ) {
+			//System.out.println( "a() :: caught RuntimeException exception" );
+		//} 
+		finally {
 			System.out.println( "finally" );
 		}
 		System.out.println( "a() :: calling b, no try block" );
